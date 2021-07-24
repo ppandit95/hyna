@@ -1,6 +1,6 @@
 #include "LaplaceYoungSource.h"
 
-registerMooseObject("HynaMooseApp", LaplaceYoungSource);
+registerMooseObject("MooseApp", LaplaceYoungSource);
 
 InputParameters
 LaplaceYoungSource::validParams()

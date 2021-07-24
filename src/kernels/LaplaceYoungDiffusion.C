@@ -1,6 +1,6 @@
 #include "LaplaceYoungDiffusion.h"
 
-registerMooseObject("HynaMooseApp", LaplaceYoungDiffusion);
+registerMooseObject("MooseApp", LaplaceYoungDiffusion);
 
 InputParameters
 LaplaceYoungDiffusion::validParams()
@@ -16,5 +16,5 @@ ADRealVectorValue
 LaplaceYoungDiffusion::precomputeQpResidual()
 {
   ADReal k = 1./std::sqrt(1 + _grad_u[_qp]*_grad_u[_qp]);
-  return k * _grad_u[_qp];
+  return - k * _grad_u[_qp];
 }
